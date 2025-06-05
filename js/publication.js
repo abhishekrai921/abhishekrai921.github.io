@@ -61,8 +61,15 @@
         li.innerHTML = `<p style="font-size: 130%;">${item.html}</p>`;
         list.appendChild(li);
       });
+	  
+	 // ✅ Remove loading message
+    const loadingMsg = document.getElementById('loading-msg');
+    if (loadingMsg) loadingMsg.remove();
     });
   })
-  .catch(error => {
+  	.catch(error => {
     console.error('Error fetching ORCID summary:', error);
+    const loadingMsg = document.getElementById('loading-msg');
+    if (loadingMsg) loadingMsg.innerHTML = '<p style="font-size: 130%; color: red;">Failed to fetch publications.</p>';
   });
+
