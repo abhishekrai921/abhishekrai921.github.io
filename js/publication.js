@@ -1,4 +1,4 @@
-<script>
+
   const orcid = "0009-0002-6981-0362";
   const worksUrl = `https://pub.orcid.org/v3.0/${orcid}/works`;
 
@@ -66,4 +66,3 @@
   .catch(error => {
     console.error('Error fetching ORCID summary:', error);
   });
-</script>
